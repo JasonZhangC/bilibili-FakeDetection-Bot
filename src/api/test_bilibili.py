@@ -28,9 +28,17 @@ def test_at_messages():
         print(f"获取最近{page_size}条@信息...")
         response = get_at_messages(page_size=page_size, page_num=1)
         
+        # 创建logs目录用于存储历史记录文件
+        logs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs'))
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
+            
         # 保存原始响应到文件，便于调试
-        with open(f"test_at_response_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json", "w", encoding="utf-8") as f:
+        log_filename = os.path.join(logs_dir, f"test_at_response_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+        with open(log_filename, "w", encoding="utf-8") as f:
             json.dump(response, f, ensure_ascii=False, indent=2)
+        
+        print(f"响应已保存到: {log_filename}")
         
         # 打印API响应基本信息
         print(f"API响应状态码: {response.get('code')}")
