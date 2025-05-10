@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 敏感配置文件
+config.py
+.env
+*.pem
+*.key
+
+# 日志文件
+log/*
+!log/.gitkeep
+
+# 缓存
+.cache/
+.pytest_cache/
+.coverage
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE 文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# 运行时文件
+*.pid
+*.lock
+
+# 数据文件
+data/*
+!data/.gitkeep
+!data/sensitive_words.txt.example 
